@@ -1,10 +1,13 @@
-/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/Product.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/repository/ProductRepository.java
+/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/ReviewMongoDB.java
+/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/CommentMongoDB.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/repository/CommentRepository.java
-/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/Comment.java
+/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/repository/ReviewMongoDBRepository.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/controller/CommentsController.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/Review.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/ReviewsApplication.java
+/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/Product.java
+/Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/entity/Comment.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/controller/ProductsController.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/repository/ReviewRepository.java
 /Users/estebanmasobro/Udacity/nanodegrees/Java Developer/Core Curriculum/4. Data Stores & Persistence/JDND/P03-ReviewsAPI/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java

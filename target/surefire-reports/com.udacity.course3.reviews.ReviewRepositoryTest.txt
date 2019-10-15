@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.udacity.course3.reviews.ReviewRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.743 s - in com.udacity.course3.reviews.ReviewRepositoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.553 s - in com.udacity.course3.reviews.ReviewRepositoryTest

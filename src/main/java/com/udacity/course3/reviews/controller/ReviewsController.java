@@ -2,17 +2,17 @@ package com.udacity.course3.reviews.controller;
 
 import com.udacity.course3.reviews.entity.Product;
 import com.udacity.course3.reviews.entity.Review;
+import com.udacity.course3.reviews.entity.ReviewMongoDB;
 import com.udacity.course3.reviews.repository.ProductRepository;
+import com.udacity.course3.reviews.repository.ReviewMongoDBRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +27,9 @@ public class ReviewsController {
     ProductRepository productRepository;
     @Autowired
     ReviewRepository reviewRepository;
+    // EMG - Wire MongoDB repository here
+    @Autowired
+    ReviewMongoDBRepository reviewMongoDBRepository;
 
     /**
      * Creates a review for a product.
@@ -46,7 +49,17 @@ public class ReviewsController {
             // For a review of the get() method of Optional, see the link below:
             // https://www.baeldung.com/java-optional
             review.setProduct(productRead.get());
-            return new ResponseEntity<>(reviewRepository.save(review), HttpStatus.CREATED);
+            // Firstly, save the review in MySQL
+            reviewRepository.save(review);
+            // Secondly, save the review in MongoDB
+            ReviewMongoDB reviewMongoDB = new ReviewMongoDB();
+            reviewMongoDB.setId(review.getId());
+            reviewMongoDB.setTitle(review.getTitle());
+            reviewMongoDB.setText(review.getText());
+            reviewMongoDB.setCreatedBy(review.getCreatedBy());
+            reviewMongoDB.setComments(new ArrayList<>());
+
+            return new ResponseEntity<>(reviewMongoDBRepository.save(reviewMongoDB), HttpStatus.CREATED);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -62,7 +75,14 @@ public class ReviewsController {
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
         Optional<Product> productRead = productRepository.findById(productId);
         if (productRead.isPresent()) {
-            return new ResponseEntity<>(reviewRepository.findAllByProduct(productRead.get()), HttpStatus.OK);
+            // return new ResponseEntity<>(reviewRepository.findAllByProduct(productRead.get()), HttpStatus.OK);
+            // EMG - When loading reviews for a product, the ids are read from MySQL, and the review document from
+            // MongoDB
+            ArrayList<Optional<ReviewMongoDB>> reviews = new ArrayList<>();
+            reviewRepository.findAllIdsByProduct(productRead.get().getId())
+                    .iterator().
+                    forEachRemaining(id -> { reviews.add(reviewMongoDBRepository.findById(id)); });
+            return new ResponseEntity<>(reviews, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
