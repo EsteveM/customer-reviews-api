@@ -1,6 +1,6 @@
 # Customer Reviews API Project
 
-This project is intended to build the persistence layer for a REST API that supports the customer reviews and comments of a product page in an ecommerce application. The API is built using Java, Spring Boot and Maven. Polyglot persistence will be introduced with Review information residing in both MySQL and MongoDB in different shapes. Review information resides in both MySQL and MongoDB in different shapes. The API is also tested using Spring Data JPA and MongoDB Tests.
+This project is intended to build the persistence layer for a REST API that supports the customer reviews and comments of a product page in an ecommerce application. The API is built using Java, Spring Boot and Maven. Polyglot persistence is introduced with Review information residing in both MySQL and MongoDB in different shapes. The API is also tested using Spring Data JPA and MongoDB Tests.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ As has already been mentioned, this project develops a REST API that supports th
 * Required Spring Data MongoDB Repositories (ReviewMongoDBRepository) have been defined.
 * Spring REST controller methods have been implemented within ProductsController, ReviewsController, and CommentsController.
 * A persistence service has been written to read/write reviews from MongoDB. When loading reviews for a product, the service reads the ids from MySQL and the review document from MongoDB.
-* Tests for JPA and MongoDB repositories have been written against an in-memory database: ReviewsApplicationTests, ProductRepositoryTest, ReviewRepositoryTest, ReviewMongoDBRepositoryTest and CommentRepositoryTest.
+* Tests for JPA and MongoDB repositories have been written against in-memory databases: ReviewsApplicationTests, ProductRepositoryTest, ReviewRepositoryTest, ReviewMongoDBRepositoryTest and CommentRepositoryTest.
 
 ## Testing coverage
 
@@ -43,7 +43,7 @@ In this section, the twelve tests covered are listed:
 	* testFindAllByProduct: tests that the findAllByProduct method of the ReviewRepository works.
 * ReviewMongoDBRepositoryTest:
 	* injectedComponentsAreNotNull: tests that the injected components are not null.
-	* MongoDBSpringIntegrationTest: tests that the save method of the ReviewMongoDBRepository works. It checks that the review with its embedded comments is saved correctly.
+	* MongoDBSpringIntegrationTest: tests that the save method of the ReviewMongoDBRepository works. It checks that the review together with its embedded comments is saved correctly.
 * CommentRepositoryTest:
 	* injectedComponentsAreNotNull: tests that the injected components are not null.
 	* testSaveComment: tests that the save method of the CommentRepository works.
@@ -53,7 +53,7 @@ In this section, the twelve tests covered are listed:
 
 The procedure to obtain a functional a copy of the project on your local machine so that you can further develop and/or test it is explained in this section. These are the steps to be followed:
 
-* Firstly, you have to download/clone the project files from this repository onto your local machine. Then, cd into the root folder where the project files are located.
+* Firstly, you have to download/clone the project files from this repository onto your local machine. Then, cd into the root folder where the project files are located. Please, note that the final version of this project including polyglot persistence is located at the *customer-reviews-api-final* branch. It is possible to switch to that branch by just typing `git checkout customer-reviews-api-final`.
 * For your information, this is the result of the execution of the packaging step for the P03-ReviewsAPI application:
 ![reviewsapipackage2](/ScreenShots/reviewsapipackage2.png)
 * This step creates this *jar* file: *reviews-0.0.1-SNAPSHOT.jar*.
@@ -62,7 +62,7 @@ The procedure to obtain a functional a copy of the project on your local machine
 	![jar12](/ScreenShots/jar12.png)
 	* This can also be seen on the MySQL shell:
 	![jar32](/ScreenShots/jar32.png)
-	* The first tie you run the *jar* file, the initial MongoDB 'reviews' collection is also created. This can be seen on the Mongo shell:
+	* The first time you run the *jar* file, the initial MongoDB 'reviews' collection is also created. This can be seen on the Mongo shell:
 	![jar42](/ScreenShots/jar42.png)
 	* The reviews API server is started on port 8080:
 	![jar22](/ScreenShots/jar22.png)
@@ -91,7 +91,7 @@ The procedure to obtain a functional a copy of the project on your local machine
 	![postman7](/ScreenShots/postman7.png)
 * In the fourth place, if you want to run the supporting tests yourself, you have to:
 	* Make sure the application is running. If you have followed along, this should be the case now.
-	* Open a new terminal shell window, cd to the P03-ReviewsAPI folder, and type, for instance, `mvn test`. Please, note how all tests pass:
+	* Open a new terminal shell window, cd to the root folder of this project, and type, for instance, `mvn test`. Please, note how all tests pass:
 	![tests12](/ScreenShots/tests12.png)
 	![tests22](/ScreenShots/tests22.png)
 
