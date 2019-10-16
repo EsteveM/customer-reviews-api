@@ -53,7 +53,7 @@ In this section, the twelve tests covered are listed:
 
 The procedure to obtain a functional a copy of the project on your local machine so that you can further develop and/or test it is explained in this section. These are the steps to be followed:
 
-* Firstly, you have to download/clone the project files from this repository onto your local machine. Then, cd into the root folder where the project files are located. Please, note that the final version of this project including polyglot persistence is located at the *customer-reviews-api-final* branch. It is possible to switch to that branch by just typing `git checkout customer-reviews-api-final`.
+* Firstly, you have to download/clone the project files from this repository onto your local machine. Then, cd into the root folder where the project files are located.
 * For your information, this is the result of the execution of the packaging step for the P03-ReviewsAPI application:
 ![reviewsapipackage2](/ScreenShots/reviewsapipackage2.png)
 * This step creates this *jar* file: *reviews-0.0.1-SNAPSHOT.jar*.
@@ -97,7 +97,7 @@ The procedure to obtain a functional a copy of the project on your local machine
 
 # References 
 
-Please, consider this resources for further information:
+Please, consider these resources for further information:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/)
