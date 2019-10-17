@@ -1,7 +1,7 @@
 package com.udacity.course3.reviews.entity;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "products")
@@ -13,9 +13,11 @@ public class Product {
     private Integer id;
 
     @Column(name = "name")
+    @NotNull(message = "Name cannot be null")
     private String name;
 
     @Column(name = "description")
+    @NotNull(message = "Description cannot be null")
     private String description;
 
     public Integer getId() {

@@ -1,6 +1,7 @@
 package com.udacity.course3.reviews.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Entity
@@ -13,12 +14,15 @@ public class Comment {
     private Integer id;
 
     @Column(name = "title")
+    @NotNull(message = "Title cannot be null")
     private String title;
 
     @Column(name = "text")
+    @NotNull(message = "Text cannot be null")
     private String text;
 
     @Column(name = "created_by")
+    @NotNull(message = "Created By cannot be null")
     private String createdBy;
 
     @ManyToOne

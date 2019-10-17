@@ -1,4 +1,4 @@
-CREATE TABLE products	 (
+CREATE TABLE products (
      id MEDIUMINT NOT NULL AUTO_INCREMENT,
      name CHAR(30) NOT NULL,
      description VARCHAR(255) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE reviews (
 	created_by VARCHAR(255) NOT NULL,
 	product_id MEDIUMINT NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (product_id) REFERENCES PRODUCTS(id)
+	FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 CREATE TABLE comments (
@@ -22,5 +22,5 @@ CREATE TABLE comments (
 	created_by VARCHAR(255) NOT NULL,
 	review_id MEDIUMINT NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (review_id) REFERENCES REVIEWS(id)
+	FOREIGN KEY (review_id) REFERENCES reviews(id)
 );

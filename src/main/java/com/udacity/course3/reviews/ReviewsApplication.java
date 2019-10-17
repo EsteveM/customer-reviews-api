@@ -23,7 +23,9 @@ public class ReviewsApplication {
 		// EMG - See the link below to find a way to avoid the time zone issue when creating the
 		// Flyway instance and pointing it to the database
 		// https://stackoverflow.com/questions/26515700/mysql-jdbc-driver-5-1-33-time-zone-issue
-		Flyway flyway = Flyway.configure().dataSource("jdbc:mysql://localhost/PROJECT3?serverTimezone=UTC", "root", "ESTEBAN55").load();
+		// Following Udacity reviewer's advice, createDatabaseIfNotExist=TRUE is added so that no error is thrown if
+		// the database does not exist
+		Flyway flyway = Flyway.configure().dataSource("jdbc:mysql://localhost/PROJECT3?serverTimezone=UTC&createDatabaseIfNotExist=TRUE", "root", "ESTEBAN55").load();
 
 		// Start the migration
 		flyway.migrate();
